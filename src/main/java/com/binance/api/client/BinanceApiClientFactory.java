@@ -3,6 +3,7 @@ package com.binance.api.client;
 import com.binance.api.client.impl.BinanceApiAsyncIsolatedMarginClientImpl;
 import com.binance.api.client.impl.BinanceApiAsyncMarginRestClientImpl;
 import com.binance.api.client.impl.BinanceApiAsyncRestClientImpl;
+import com.binance.api.client.impl.BinanceApiFuturesRestClientImpl;
 import com.binance.api.client.impl.BinanceApiMarginRestClientImpl;
 import com.binance.api.client.impl.BinanceApiRestClientImpl;
 import com.binance.api.client.impl.BinanceApiServiceGenerator;
@@ -82,6 +83,13 @@ public class BinanceApiClientFactory {
    */
   public BinanceApiMarginRestClient newMarginRestClient() {
     return new BinanceApiMarginRestClientImpl(apiKey, secret);
+  }
+
+  /**
+   * Creates a new synchronous/blocking Futures REST client.
+   */
+  public BinanceApiFuturesRestClient newFuturesRestClient() {
+    return new BinanceApiFuturesRestClientImpl(apiKey, secret);
   }
 
   /**

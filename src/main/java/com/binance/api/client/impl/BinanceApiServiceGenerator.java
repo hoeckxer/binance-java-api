@@ -5,6 +5,8 @@ import static java.lang.Integer.getInteger;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 
+import okhttp3.OkHttpClient;
+import org.apache.commons.lang3.StringUtils;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClientConfig.Builder;
 import org.asynchttpclient.Dsl;
@@ -85,19 +87,13 @@ public class BinanceApiServiceGenerator {
   public static <S> S createService(Class<S> serviceClass, String apiKey, String secret) {
     AuthenticationInterceptor authenticationInterceptor = new AuthenticationInterceptor(apiKey, secret);
     AsyncHttpClientCallFactory ahccf = AsyncHttpClientCallFactory.builder()
-
         .httpClient(sharedClient)
-
         .callCustomizer(callBuilder -> callBuilder.requestCustomizer(authenticationInterceptor))
-
         .build();
 
     Retrofit retrofit = new Retrofit.Builder()
-
         .baseUrl(BinanceApiConfig.getApiBaseUrl())
-
         .callFactory(ahccf)
-
         .addConverterFactory(converterFactory).build();
     return retrofit.create(serviceClass);
   }

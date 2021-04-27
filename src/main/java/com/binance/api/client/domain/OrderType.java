@@ -8,11 +8,15 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public enum OrderType {
   LIMIT,
+  LIMIT_MAKER,
   MARKET,
+  OCO,
+  STOP,
   STOP_LOSS,
   STOP_LOSS_LIMIT,
+  STOP_MARKET,
   TAKE_PROFIT,
   TAKE_PROFIT_LIMIT,
-  LIMIT_MAKER,
-  OCO
+  TAKE_PROFIT_MARKET,
+  TRAILING_STOP_MARKET
 }

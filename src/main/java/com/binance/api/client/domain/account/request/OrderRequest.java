@@ -19,6 +19,12 @@ public class OrderRequest implements Retriable<OrderRequest> {
 
   private long timestamp;
 
+  public OrderRequest() {
+    this.symbol = null;
+    this.timestamp = System.currentTimeMillis();
+    this.recvWindow = BinanceApiConstants.DEFAULT_RECEIVING_WINDOW;
+  }
+
   public OrderRequest(String symbol) {
     this.symbol = symbol;
     this.timestamp = System.currentTimeMillis();

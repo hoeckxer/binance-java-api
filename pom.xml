@@ -59,7 +59,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.10</version>
+      <version>1.18.20</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -94,8 +94,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>13</source>
+          <target>13</target>
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
@@ -105,21 +105,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <scm>
-    <developerConnection>scm:git:http://${env.GIT_USERNAME}:${env.GIT_PASSWORD}@kube1:3000/anydoby/binance-java-api.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-
-  <distributionManagement>
-    <repository>
-      <id>kube-releases</id>
-      <url>http://kube1:9090/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>kube-snapshots</id>
-      <url>http://kube1:9090/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
 
 </project>

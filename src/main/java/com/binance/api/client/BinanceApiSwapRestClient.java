@@ -1,14 +1,11 @@
 package com.binance.api.client;
 
-import java.util.List;
-
 import com.binance.api.client.domain.SwapRemoveType;
-import com.binance.api.client.domain.account.Liquidity;
-import com.binance.api.client.domain.account.LiquidityOperationRecord;
-import com.binance.api.client.domain.account.Pool;
-import com.binance.api.client.domain.account.SwapHistory;
-import com.binance.api.client.domain.account.SwapQuote;
-import com.binance.api.client.domain.account.SwapRecord;
+import com.binance.api.client.domain.account.*;
+import retrofit2.Call;
+import retrofit2.http.Query;
+
+import java.util.List;
 
 public interface BinanceApiSwapRestClient {
 
